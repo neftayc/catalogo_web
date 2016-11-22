@@ -1,0 +1,9 @@
+Client web project:
+D:\practian-ioteca-project o XXX\catalogo_web>npm install
+D:\practian-ioteca-project o XXX\catalogo_web>bower install
+D:\practian-ioteca-project o XXX\catalogo_web>gulp serve
+
+[09:22:36] Using gulpfile D:\practian-... o XXX\catalogo_web\gulpfile.js
+[09:22:36] Starting 'serve'...
+[09:22:36] Finished 'serve' after 93 ms
+[09:22:36] Server started http://localhost:9003

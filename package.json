@@ -1,0 +1,19 @@
+{
+    "name": "catalogo_web",
+    "version": "1.0.0",
+    "description": "Un cliente OAuth2",
+    "main": "gulpfile.js",
+    "dependencies": {
+        "gulp": "^3.9.0",
+        "gulp-connect": "^2.3.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "runserver"
+    },
+    "keywords": [
+        "gulp"
+    ],
+    "author": "practian",
+    "license": "ISC"
+}
