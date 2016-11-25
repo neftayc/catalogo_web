@@ -52,13 +52,32 @@ app
         ],
         'contrastLightColors': undefined // could also specify this if default was 'dark'
     });
-    // $mdThemingProvider.theme('default').primaryPalette('amazingPaletteName');
+    //$mdThemingProvider.theme('default').primaryPalette('amazingPaletteName');
 
     $mdThemingProvider.theme('default').primaryPalette('blue', { 'default': '900' });
 
 
     $mdThemingProvider.theme('docs-dark')
-        .primaryPalette('blue')
+        .primaryPalette('grey')
+        .dark();
+
+    $mdThemingProvider.theme('altTheme')
+        .primaryPalette('purple'); // specify primary color, all
+    // other color intentions will be inherited
+    // from default
+
+
+    var neonRedMap = $mdThemingProvider.extendPalette('red', {
+        '500': '#ff0000',
+        'contrastDefaultColor': 'dark'
+    });
+
+    // Register the new color palette map with the name <code>neonRed</code>
+    $mdThemingProvider.definePalette('neonRed', neonRedMap);
+
+
+    $mdThemingProvider.theme('panelTheme')
+        .primaryPalette('neonRed')
         .dark();
 });
 
@@ -66,13 +85,7 @@ app
 app
 
     .config(function($mdThemingProvider) {
-
-    $mdThemingProvider.theme('altTheme')
-        .primaryPalette('purple'); // specify primary color, all
-    // other color intentions will be inherited
-    // from default
-
-    $mdThemingProvider.setDefaultTheme('default');
+    //$mdThemingProvider.setDefaultTheme('default');
     $mdThemingProvider.alwaysWatchTheme(true);
 
 });

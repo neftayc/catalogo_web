@@ -17,12 +17,6 @@ app.constant('ROUTERS', [
             "views": {
                 "": {
                     "templateUrl": "app/views/layouts/uno/layout.html"
-                },
-                "aside": {
-                    "templateUrl": "app/views/layouts/uno/aside.html"
-                },
-                "content": {
-                    "templateUrl": "app/views/layouts/uno/content.html"
                 }
             },
             "loginRequired": false

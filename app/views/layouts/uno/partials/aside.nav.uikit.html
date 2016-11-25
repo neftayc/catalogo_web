@@ -4,7 +4,7 @@
             
             <div ng-repeat="menu in section.menu">
                 <li ng-if="menu.type === 'toggle'" ng-class="{'active toggled':$state.includes('{{menu.state}}')}">
-                    <a md-ink-ripple toggle-submenu>
+                    <a md-ink-ripple toggle-submenu class="inherit">
                         <span class="pull-right  ">
                           <ng-md-icon icon="keyboard_arrow_down"></ng-md-icon>
                         </span>

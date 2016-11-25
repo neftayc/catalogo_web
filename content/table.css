@@ -23,15 +23,15 @@ md-table-container {
 /*línea a la fila*/
 
 table td {
-    color: rgba(0, 0, 0, 0.87);
-    border-top: 1px rgba(0, 0, 0, 0.12) solid;
+    border-top: 1px solid;
 }
 
 
 /*hover a la fila*/
 
 table tbody > tr:not([disabled]):hover {
-    background-color: #eeeeee !important;
+    background-color: gray;
+
 }
 
 

@@ -187,6 +187,17 @@ app
         }
     });
 
+    
+
+    if (oauth2Service.isAauthenticated() || oauth2Service.tryLogin()) {
+        console.log(" ... || oauth2Service.tryLogin() ");
+        //$http.defaults.headers.common['Authorization'] = 'Bearer ' + oauth2Service.getAccessToken(); //no usar, no fresca al salir de la sesion
+        if (oauth2Service.state) { // regresa a next #/url
+            console.log("oauth2Service.state=" + oauth2Service.state);
+            $location.url(oauth2Service.state.substr(1)); // führendes # abschneiden
+        }
+    }
+
     $rootScope.$on('$stateChangeSuccess', function() {
         console.log("$stateChangeSuccess isAauthenticated=" + oauth2Service.isAauthenticated());
         if (oauth2Service.isAauthenticated() && oauth2Service.getIdentityClaims()) {
@@ -199,15 +210,7 @@ app
             console.log("routers " + JSON.stringify(routers));
         }
     });
-
-    if (oauth2Service.isAauthenticated() || oauth2Service.tryLogin()) {
-        console.log(" ... || oauth2Service.tryLogin() ");
-        //$http.defaults.headers.common['Authorization'] = 'Bearer ' + oauth2Service.getAccessToken(); //no usar, no fresca al salir de la sesion
-        if (oauth2Service.state) { // regresa a next #/url
-            console.log("oauth2Service.state=" + oauth2Service.state);
-            $location.url(oauth2Service.state.substr(1)); // führendes # abschneiden
-        }
-    }
+    
 
     $rootScope.$on('loginRequired', function() {
         console.log("emit loginRequired ");
