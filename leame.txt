@@ -1,4 +1,4 @@
-Client web project:
+Client web:
 D:\practian-ioteca-project o XXX\catalogo_web>npm install
 D:\practian-ioteca-project o XXX\catalogo_web>bower install
 D:\practian-ioteca-project o XXX\catalogo_web>gulp serve

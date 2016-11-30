@@ -231,7 +231,9 @@ app.factory('oauth2InterceptorService', function($injector, $q, $location, $wind
         //config.headers.Authorization = 'Bearer vQTQa5kl6m5wlhPTlMj2CeVI0UN957';
         var authData = localStorage.getItem("access_token");
         if (authData) {
-            configs.headers.Authorization = 'Bearer ' + JSON.parse(authData).accessToken;
+            var a= JSON.parse(authData);
+            //console.log("authData:" + JSON.stringify(authData));
+            configs.headers.Authorization = 'Bearer ' + a.accessToken;
         }
 
         return configs;

@@ -1,6 +1,6 @@
 app
     .controller('MainCtrl', function($scope, $timeout, $mdSidenav, $log, $rootScope,
-        menuService, oauth2Service, apiUrl, $window, $mdBottomSheet, $mdToast) {
+        menuService, oauth2Service, authUrl, $window, $mdBottomSheet, $mdToast) {
 
         // show menu
         $scope.toggleLeft = buildDelayedToggler('left');
@@ -111,7 +111,7 @@ app
         $scope.logOut = function() {
             console.log("logOut");
             oauth2Service.logOut();
-            $window.location = apiUrl + "/accounts/logout/";
+            $window.location = authUrl + "/accounts/logout/";
 
         };
 
@@ -163,14 +163,14 @@ app
 
 
 
-app.controller("VoucherCtrl", function($scope, $http, oauth2Service, apiUrl) {
+app.controller("VoucherCtrl", function($scope, $http, oauth2Service, authUrl) {
 
     $scope.model = {};
 
     $scope.model.message = "";
     $scope.model.buyVoucher = function() {
         $http
-            .post(apiUrl + "/api/voucher?betrag=150", null)
+            .post(authUrl + "/api/voucher?betrag=150", null)
             .then(function(result) {
                 $scope.model.message = result.data;
             })

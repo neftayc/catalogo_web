@@ -141,17 +141,19 @@ app
 //====================================================
 // 
 //====================================================
-.run(function(oauth2Service, $state, $rootScope, $location, apiUrl, $window, userService) {
+.run(function(oauth2Service, $state, $rootScope, $location, authUrl, $window, userService) {
 
 
-    oauth2Service.loginUrl = apiUrl + "/o/authorize/";
-    oauth2Service.oidcUrl = apiUrl + "/api/auths/localuserinfo/";
-    //oauth2Service.routersUrl = apiUrl + "/api/auths/routers/"; // no activar pk no se puede activar un sesion en la misma app
+    oauth2Service.loginUrl = authUrl + "/o/authorize/";
+    oauth2Service.oidcUrl = authUrl + "/api/oauth2_backend/localuserinfo/";
+    //oauth2Service.routersUrl = authUrl + "/api/oauth2_backend/routers/"; // no activar pk no se puede activar un sesion en la misma app
     //oauth2Service.redirectUri = location.origin + ""; // si colocas, colocar tal cual está registrado en al app
     console.log("location.origin=" + location.origin);
 
-    oauth2Service.clientId = "cZDXQSFgPUo1095Rsk2VRghzbi9iaMMDDkqUdcFx";
-    //oauth2Service.scope = "read";
+    //oauth2Service.clientId = "cZDXQSFgPUo1095Rsk2VRghzbi9iaMMDDkqUdcFx";//sqlite3 de https://github.com/practian-ioteca-project/ioteca_service
+    oauth2Service.clientId = "RBzvAoW3dtySxnPob5TuQgINV3yITSVE5bevdosI";//MYSQL
+    //oauth2Service.clientId = "RXQ55Y7OqLUibs9eKYdpXtdBm5ZC1gqhArW5Nylm"; //ORA
+    oauth2Service.scope = "catalogo";//comentar si no está configurado
 
     //https://github.com/angular-ui/ui-router/wiki
     $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
@@ -202,7 +204,7 @@ app
         console.log("$stateChangeSuccess isAauthenticated=" + oauth2Service.isAauthenticated());
         if (oauth2Service.isAauthenticated() && oauth2Service.getIdentityClaims()) {
             var userData = oauth2Service.getIdentityClaims();
-            console.log("userData " + JSON.stringify(userData));
+            console.log("userData=" + JSON.stringify(userData));
             userService.userName = userData.username; // complete aqui lo otros campos
         }
         if (oauth2Service.getRouters()) {

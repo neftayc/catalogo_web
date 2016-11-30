@@ -16,9 +16,11 @@ var app = angular.module("catalogo", ["oauth2", "ui.router",
 // Constantes de la app
 //====================================================
 // app.constant("apiUrl", "http://localhost:42344");
-app.constant("apiUrl", "http://localhost:9000"); // Authorization Server
-app.constant("menuUrl", "http://localhost:9000/api/auths/usermenu/"); // Api que trae el menu del usuario
-app.constant("appsUrl", "http://localhost:9001"); // Página cliente de inicio
+app.constant("authUrl", "http://localhost:9000"); // Authorization Server -> oauth2_backend_service
+app.constant("apiUrl", "http://localhost:8000"); // Resource Server -> catalogo
+
+app.constant("menuUrl", "http://localhost:9000/api/oauth2_backend/usermenu/"); // Api que trae el menu del usuario
+app.constant("homeUrl", "http://localhost:9001"); // Página de inicio o de convergencia
 
 
 
