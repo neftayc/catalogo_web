@@ -57,7 +57,13 @@ app
     $scope.sel = function() {
         catalogoService.Autor.get({ id: $stateParams.id }, function(r) {
             $scope.autor = r;
-            if (r.fecha_nac) $scope.autor.fecha_nacT = new Date($filter('date')(r.fecha_nac));
+            console.log('r.fecha_nac=' + r.fecha_nac);
+            console.log("new Date(r.fecha_nac +' 00:00:00')=" + new Date(r.fecha_nac + ' 00:00:00'));
+            //console.log('$filter(date)(r.fecha_nac)='+$filter('date')(r.fecha_nac));
+
+
+            if (r.fecha_nac) $scope.autor.fecha_nacT = (new Date(r.fecha_nac + ' 00:00:00'));
+            console.log('$scope.autor.fecha_nacT=' + $scope.autor.fecha_nacT);
         }, function(err) {
             $log.log("Error in get:" + JSON.stringify(err));
             toastr.error(err.data.detail, err.status + ' ' + err.statusText);
@@ -69,6 +75,7 @@ app
 
     $scope.save = function() {
         if ($scope.autor.fecha_nacT) {
+            //fecha_nac = models.DateField(null=True, blank=True)
             $scope.autor.fecha_nac = $filter('date')(new Date($scope.autor.fecha_nacT), 'yyyy-MM-dd');
         }
         if ($scope.autor.id) {
@@ -78,7 +85,7 @@ app
                 $state.go('catalogo.catalogo.autores');
             }, function(err) {
                 $log.log("Error in update:" + JSON.stringify(err));
-                toastr.error(err.data.detail, err.status + 'wwwwwwwwwwwww ' + err.statusText);
+                toastr.error(err.data.detail, err.status + ' ' + err.statusText);
             });
         } else {
             catalogoService.Autor.save($scope.autor, function(r) {

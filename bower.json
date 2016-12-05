@@ -27,6 +27,12 @@
     "angular-sanitize": "^1.5.8",
     "angular-resource": "^1.5.8",
     "angular-toastr": "^2.1.1",
-    "moment": "^2.15.2"
+    "moment": "^2.15.2",
+    "angular-translate": "^2.13.0",
+    "angular-dynamic-locale": "^0.1.32",
+    "angular-i18n": "^1.5.9"
+  },
+  "devDependencies": {
+    "angular-translate": "^2.13.0"
   }
 }

@@ -1,6 +1,87 @@
 app
-    .controller('MainCtrl', function($scope, $timeout, $mdSidenav, $log, $rootScope,
-        menuService, oauth2Service, authUrl, $window, $mdBottomSheet, $mdToast) {
+    .controller('MainCtrl', function($scope, $timeout, $mdSidenav, $log, $rootScope, $filter, $mdDateLocale,
+        menuService, oauth2Service, authUrl, $window, $mdBottomSheet, $mdToast, $translate, $locale, tmhDynamicLocale) {
+
+        //locale and translate
+        console.log('moment.locale()=' + moment.locale());
+        $scope.changeLanguage = function(lang) {
+            document.cookie = "lang=" + lang;
+            $translate.use(lang);
+            tmhDynamicLocale.set(lang);
+            moment.locale(lang.substring(0, 2));
+            console.log('lang.substring(0,2)=' + lang.substring(0, 2));
+            console.log('moment.locale()=' + moment.locale());
+
+
+            var localeDate = moment.localeData();
+            $mdDateLocale.months = localeDate._months;
+            //$mdDateLocale.shortMonths = localeDate._monthsShort;
+            $mdDateLocale.days = localeDate._weekdays;
+            $mdDateLocale.shortDays = localeDate._weekdaysMin;
+
+            //$mdDateLocale.msgCalendar = $translate.instant('MSG_CALENDAR');
+            //$mdDateLocale.msgOpenCalendar = $translate.instant('MSG_OPEN_CALENDAR');
+
+
+        };
+        $translate.preferredLanguage(getCookie("lang"));
+
+        $rootScope.model = { selectedLocale: getCookie("lang") };
+        $rootScope.$locale = $locale;
+        tmhDynamicLocale.set(getCookie("lang"));
+
+        moment.locale(getCookie("lang").substring(0, 2)); 
+        console.log('moment.locale()=' + moment.locale());
+        console.log('getCookie("lang")=' + getCookie("lang"));
+
+        $translate(['']).then(function(text) {});
+        $rootScope.availableLocales = {
+            'en-us': $filter('translate')('en-us'),
+            'es-pe': $filter('translate')('es-pe'),
+            'pt-br':'pt-br',
+            'es': 'Spanish',
+            'de': 'German',
+            'fr': 'French',
+            'ar': 'Arabic',
+            'ja': 'Japanese',
+            'ko': 'Korean',
+            'zh': 'Chinese'
+        };
+        $rootScope.$on('$translateChangeSuccess', function() {
+            $rootScope.availableLocales = {
+                'en-us': $filter('translate')('en-us'),
+                'es-pe': $filter('translate')('es-pe'),
+                'pt-br':'pt-br',
+                'es': 'Spanish',
+                'de': 'German',
+                'fr': 'French',
+                'ar': 'Arabic',
+                'ja': 'Japanese',
+                'ko': 'Korean',
+                'zh': 'Chinese'
+            };
+
+            $mdDateLocale.parseDate = function(dateString) {
+                var m = moment(dateString, 'L', true);
+                return m.isValid() ? m.toDate() : new Date(NaN);
+            };
+
+            $mdDateLocale.formatDate = function(date) {
+                var m = moment(date);
+                return m.isValid() ? m.format('L') : '';
+            };
+
+        });
+
+
+        //moment.locale('es');
+        //var localLocale = moment();
+        //moment.locale('es'); // change the global locale to Spanish
+        //moment().format('LLLL'); // Domingo 15 Julio 2012 11:01
+
+
+
+
 
         // show menu
         $scope.toggleLeft = buildDelayedToggler('left');
@@ -233,7 +314,7 @@ app
         { name: 'Message', icon: 'message', url: 'http://localhost:9004' },
         { name: 'Facebook', icon: 'facebook', url: 'http://localhost:9005' },
         { name: 'Twitter', icon: 'twitter', url: 'http://localhost:9006' },
-        
+
         { name: 'Home', icon: 'home', url: 'http://localhost:9001' },
         { name: 'Backend', icon: 'hangout', url: 'http://localhost:9002' },
         { name: 'Catálogo', icon: 'mail', url: 'http://localhost:9003' },

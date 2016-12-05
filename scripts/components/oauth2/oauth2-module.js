@@ -1,5 +1,5 @@
-﻿(function () { 
+﻿(function () {
 
-    angular.module("oauth2", []);
+    angular.module("pi.oauth2", []);
 
 })();

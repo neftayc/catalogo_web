@@ -1,4 +1,4 @@
-var app = angular.module("oauth2");
+var app = angular.module("pi.oauth2");
 
 
 

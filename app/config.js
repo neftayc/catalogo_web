@@ -33,30 +33,64 @@
 // Cambiar md-datepicker para formato 'DD/MM/YYYY' y primer día Domingo con moment.js
 // <md-datepicker name="fecha_nac" ng-model="autor.fecha_nacT"></md-datepicker>
 //==================================
-.config(function($mdDateLocaleProvider, $provide) {
+.config(function($mdDateLocaleProvider, $provide, $translateProvider) {
+    // set save dynamicTheme
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
 
-    $mdDateLocaleProvider.shortDays = [
-        'Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'
-    ];
-
-    // Can change week display to start on Domingo.
-    $mdDateLocaleProvider.firstDayOfWeek = 0;
-
+    moment.locale(getCookie("lang").substring(0, 2));
     // Example uses moment.js to parse and format dates.
     $mdDateLocaleProvider.parseDate = function(dateString) {
-        var m = moment(dateString, 'DD/MM/YYYY', true);
+        var m = moment(dateString, 'L', true);
         return m.isValid() ? m.toDate() : new Date(NaN);
     };
+
     $mdDateLocaleProvider.formatDate = function(date) {
-        if (angular.isDate(date)) {
-            var m = moment(date);
-            return m.isValid() ? m.format('DD/MM/YYYY') : '';
-        }
-        return '';
+        var m = moment(date);
+        return m.isValid() ? m.format('L') : '';
     };
+    var localeDate = moment.localeData();
+    $mdDateLocaleProvider.months = localeDate._months;
+    //$mdDateLocaleProvider.shortMonths = localeDate._monthsShort;
+    $mdDateLocaleProvider.days = localeDate._weekdays;
+    $mdDateLocaleProvider.shortDays = localeDate._weekdaysMin;
+
+    //$mdDateLocaleProvider.msgCalendar = $translateProvider.instant('MSG_CALENDAR');
+    //$mdDateLocaleProvider.msgOpenCalendar = $translateProvider.instant('MSG_OPEN_CALENDAR');
 
 })
 
+//====================================================
+// idiomas escaping
+//====================================================
+.config(function($translateProvider) {
+    // Enable escaping of HTML
+    $translateProvider.useSanitizeValueStrategy('escape');
+    // Enable escaping of HTML
+    $translateProvider.useSanitizeValueStrategy('escapeParameters');
+})
+
+//====================================================
+// locale dianámico y también los idiomas
+// ver MainCtrl la función $scope.changeLanguage = function(lang) {
+//====================================================
+.config(function(tmhDynamicLocaleProvider) {
+    //tmhDynamicLocaleProvider.localeLocationPattern('https://code.angularjs.org/1.2.20/i18n/angular-locale_{{locale}}.js');
+    tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
+    //tmhDynamicLocaleProvider.localeLocationPattern('locale/catalogo-locale_{{locale}}.js');
+})
 
 
 
@@ -151,9 +185,9 @@ app
     console.log("location.origin=" + location.origin);
 
     //oauth2Service.clientId = "cZDXQSFgPUo1095Rsk2VRghzbi9iaMMDDkqUdcFx";//sqlite3 de https://github.com/practian-ioteca-project/ioteca_service
-    oauth2Service.clientId = "RBzvAoW3dtySxnPob5TuQgINV3yITSVE5bevdosI";//MYSQL
+    oauth2Service.clientId = "RBzvAoW3dtySxnPob5TuQgINV3yITSVE5bevdosI"; //MYSQL
     //oauth2Service.clientId = "RXQ55Y7OqLUibs9eKYdpXtdBm5ZC1gqhArW5Nylm"; //ORA
-    oauth2Service.scope = "catalogo";//comentar si no está configurado
+    oauth2Service.scope = "catalogo"; //comentar si no está configurado
 
     //https://github.com/angular-ui/ui-router/wiki
     $rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
@@ -189,7 +223,7 @@ app
         }
     });
 
-    
+
 
     if (oauth2Service.isAauthenticated() || oauth2Service.tryLogin()) {
         console.log(" ... || oauth2Service.tryLogin() ");
@@ -212,7 +246,7 @@ app
             console.log("routers " + JSON.stringify(routers));
         }
     });
-    
+
 
     $rootScope.$on('loginRequired', function() {
         console.log("emit loginRequired ");
@@ -220,3 +254,6 @@ app
     });
 
 });
+
+
+

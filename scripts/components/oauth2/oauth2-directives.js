@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    var oauth2 = angular.module("oauth2");
+    var oauth2 = angular.module("pi.oauth2");
 
     oauth2.directive("oauth2LoginButton", function (oauth2Service, $log) {
         return {

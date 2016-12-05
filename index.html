@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="catalogo">
+<html lang="es-es" ng-app="catalogo">
 
 <head>
     <meta charset="UTF-8">
@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" type="text/css" />
     <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" type="text/css" href="content/menuuno.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="content/app-pagination.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="content/table-responsive.css" type="text/css" />
+    
     <link rel="stylesheet" href="content/layout.css" type="text/css" />
-    <link rel="stylesheet" href="content/table.css" type="text/css" />
 </head>
 
 <body>
-
-
     <div class="app" ui-view ng-controller="MainCtrl"></div>
     <!-- 3rd-Party packages -->
     <script src="bower_components/angular/angular.min.js"></script>
@@ -30,10 +31,23 @@
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
     <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
-    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
-    <!-- components app -->
-    <script src="scripts/angular-devhres.js"></script>
-
+    <!-- para configurar el formatDate, parseDate, ... para md-datepicker en el locale and lang actual -->
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <!-- locale and lang md-datepicker en espanol -->
+    <script src="bower_components/moment/locale/es.js"></script>
+    <!-- locale and lang md-datepicker en portugues -->
+    <script src="bower_components/moment/locale/pt.js"></script>
+    <script src="bower_components/moment/locale/pt-br.js"></script>
+    <!-- soporte para cambiar de lang -->
+    <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+    <!-- soporte para cambiar de locale dinamicamente -->
+    <script src="bower_components/angular-dynamic-locale/dist/tmhDynamicLocale.min.js"></script>
+    <!-- components para inyectar 
+    <script src="scripts/angular-devhresxx.js"></script>
+    -->
+    <script src="scripts/components/menuuno/menuuno.js"></script>
+    <script src="scripts/components/app-pagination/app-pagination.js"></script>
+    <script src="scripts/components/table-responsive/table-responsive.js"></script>
     <script src="scripts/components/oauth2/oauth2-module.js"></script>
     <script src="scripts/components/oauth2/oauth2-services.js"></script>
     <script src="scripts/components/oauth2/oauth2-directives.js"></script>
@@ -42,12 +56,12 @@
     <script src="app/config.js"></script>
     <script src="app/router.js"></script>
     <script src="app/controllers/main.js"></script>
-    
+    <script src="locale/catalogo-locale_en-us.js"></script>
+    <script src="locale/catalogo-locale_es-pe.js"></script>
     <script src="app/services/menuService.js"></script>
     <script src="app/services/catalogoService.js"></script>
     <script src="app/controllers/categorias.js"></script>
     <script src="app/controllers/autores.js"></script>
-    
 </body>
 
 </html>
