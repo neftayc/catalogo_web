@@ -4,7 +4,7 @@ catalogo_web
 
 .. class:: no-web
 
-    catalogo_web es un **Client application** construido en Angular para consumir los servicios de `Catalogo resource server`_ autorizado por el `Authorization server`_.
+    catalogo_web es un **Client application** construido en Angular para consumir los servicios de `Catalogo resource server`_ autorizado por el `Authorization server`_ cumpliendo así con una aplicación SSO.
 
 
 
