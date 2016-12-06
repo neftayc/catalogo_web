@@ -8,7 +8,7 @@ catalogo_web
 
 
 
-    .. image:: https://github.com/practian-ioteca-project/catalogo_web/blob/master/master/media/doc/e3-client_app_catalogo_web.png
+    .. image:: https://github.com/practian-ioteca-project/catalogo_web/blob/master/media/doc/e3-client_app_catalogo_web.png
         :alt: HTTPie compared to cURL
         :width: 100%
         :align: center
@@ -61,7 +61,7 @@ De ser necesario actualice su clientId::
     oauth2Service.clientId = "tu nuevo client_id";
 
 
-Run the app in 8003 port::
+Run the app in 9003 port::
 
 	E:\dev\catalogo_web>npm install
 	E:\dev\catalogo_web>gulp serve
@@ -105,15 +105,19 @@ Revise las configuraciones
 
 2. Constantes de la app::
 
-	app.constant("authUrl", "http://localhost:7001"); // Authorization Server -> oauth2_backend_service
+	// Authorization Server -> oauth2_backend_service
+	app.constant("authUrl", "http://localhost:7001"); 
 
-	app.constant("apiUrl", "http://localhost:8003"); // Resource Server -> catalogo
+	// Resource Server -> catalogo
+	app.constant("apiUrl", "http://localhost:8003"); 
 
 3. Constantes opcionales de la app::
+	
+	// Api que trae el menu del usuario
+	app.constant("menuUrl", "http://localhost:7001/api/oauth2_backend/usermenu/"); 
 
-	app.constant("menuUrl", "http://localhost:7001/api/oauth2_backend/usermenu/"); // Api que trae el menu del usuario
-
-	app.constant("homeUrl", "http://localhost:9001"); // Página de inicio o de convergencia
+	// Página de inicio o de convergencia
+	app.constant("homeUrl", "http://localhost:9001"); 
 
 
 
