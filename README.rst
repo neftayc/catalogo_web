@@ -122,7 +122,7 @@ Revise las configuraciones
 
 
 
-4. credentials.cnf file setting like this::
+4. config.js file setting like this::
 
 	app.run(function(oauth2Service, $state, $rootScope, $location, authUrl, $window, userService) {
 
