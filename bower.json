@@ -30,7 +30,8 @@
     "moment": "^2.15.2",
     "angular-translate": "^2.13.0",
     "angular-dynamic-locale": "^0.1.32",
-    "angular-i18n": "^1.5.9"
+    "angular-i18n": "^1.5.9",
+    "angular-oauth2-frontend": "https://github.com/practian-reapps/angular-oauth2-frontend.git"
   },
   "devDependencies": {
     "angular-translate": "^2.13.0"
