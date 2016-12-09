@@ -32,7 +32,8 @@
     "angular-dynamic-locale": "^0.1.32",
     "angular-i18n": "^1.5.9",
     "angular-oauth2-frontend": "https://github.com/practian-reapps/angular-oauth2-frontend.git",
-    "angular-material-pagination": "https://github.com/practian-reapps/angular-material-pagination.git"
+    "angular-material-pagination": "https://github.com/practian-reapps/angular-material-pagination.git",
+    "angular-material-responsive-tables": "https://github.com/practian-reapps/angular-material-responsive-tables.git"
   },
   "devDependencies": {
     "angular-translate": "^2.13.0"
