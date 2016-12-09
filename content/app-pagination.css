@@ -1,8 +1,26 @@
+.pagination .md-button {
+    padding: 0px !important;
+    margin: 0px 1px !important;
+    line-height: 28px !important;
+    min-width: 32px !important;
+    min-height: 30px !important;
+}
+
+
+
+
+
 .table-pagination {
     width: 100%;
 
 }
-
+.pagination .md-button {
+    padding: 0px !important;
+    margin: 0px 1px !important;
+    line-height: 28px !important;
+    min-width: 32px !important;
+    min-height: 30px !important;
+}
 
 .md-table-pagination td,
 .md-table-pagination th {

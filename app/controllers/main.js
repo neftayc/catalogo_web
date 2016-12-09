@@ -24,21 +24,21 @@ app
 
 
         };
-        $translate.preferredLanguage(getCookie("lang"));
+        $translate.preferredLanguage(getCookie("lang") ? getCookie("lang") : 'en');
 
-        $rootScope.model = { selectedLocale: getCookie("lang") };
+        $rootScope.model = { selectedLocale: getCookie("lang") ? getCookie("lang") : 'en' };
         $rootScope.$locale = $locale;
-        tmhDynamicLocale.set(getCookie("lang"));
+        tmhDynamicLocale.set(getCookie("lang") ? getCookie("lang") : 'en');
 
-        moment.locale(getCookie("lang").substring(0, 2)); 
+        moment.locale(getCookie("lang") ? getCookie("lang").substring(0, 2) : 'en');
         console.log('moment.locale()=' + moment.locale());
-        console.log('getCookie("lang")=' + getCookie("lang"));
+        console.log('getCookie("lang")=' + getCookie("lang") ? getCookie("lang") : 'en');
 
         $translate(['']).then(function(text) {});
         $rootScope.availableLocales = {
             'en-us': $filter('translate')('en-us'),
             'es-pe': $filter('translate')('es-pe'),
-            'pt-br':'pt-br',
+            'pt-br': 'pt-br',
             'es': 'Spanish',
             'de': 'German',
             'fr': 'French',
@@ -51,7 +51,7 @@ app
             $rootScope.availableLocales = {
                 'en-us': $filter('translate')('en-us'),
                 'es-pe': $filter('translate')('es-pe'),
-                'pt-br':'pt-br',
+                'pt-br': 'pt-br',
                 'es': 'Spanish',
                 'de': 'German',
                 'fr': 'French',
@@ -89,7 +89,12 @@ app
         $scope.asideFolded = false;
 
         $rootScope.$on('$stateChangeSuccess', function() {
-            $timeout(function() { document.getElementById('left') && $mdSidenav('left').close(); });
+            $timeout(function() {
+                if (document.getElementById('left')) {
+                    $mdSidenav('left').close();
+                }
+
+            });
         });
 
         $scope.isOpenRight = function() {
@@ -206,13 +211,13 @@ app
                 controller: 'GridBottomSheetCtrl',
                 clickOutsideToClose: true
             }).then(function(clickedItem) {
-                $scope.alert = clickedItem['name'] + ' clicked!';
+                /*$scope.alert = clickedItem['name'] + ' clicked!';
                 $mdToast.show(
                     $mdToast.simple()
                     .textContent(clickedItem['name'] + ' clicked!')
 
                     .hideDelay(1500)
-                );
+                );*/
             });
         };
 
@@ -284,7 +289,7 @@ app
                 templateUrl: 'app/views/bottom-sheet-list-template.html',
                 controller: 'ListBottomSheetCtrl'
             }).then(function(clickedItem) {
-                $scope.alert = clickedItem['name'] + ' clicked!';
+                //$scope.alert = clickedItem['name'] + ' clicked!';
             });
         };
 

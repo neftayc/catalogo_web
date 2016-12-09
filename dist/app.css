@@ -1,0 +1,538 @@
+/**
+ * catalogo_web - Un cliente OAuth2
+ * @author practian
+ * @version v1.0.0
+ * @link 
+ * @license ISC
+ */
+.pagination .md-button {
+    padding: 0px !important;
+    margin: 0px 1px !important;
+    line-height: 28px !important;
+    min-width: 32px !important;
+    min-height: 30px !important;
+}
+
+
+
+
+
+.table-pagination {
+    width: 100%;
+
+}
+.pagination .md-button {
+    padding: 0px !important;
+    margin: 0px 1px !important;
+    line-height: 28px !important;
+    min-width: 32px !important;
+    min-height: 30px !important;
+}
+
+.md-table-pagination td,
+.md-table-pagination th {
+    padding: 8px 3px;
+    text-align: left;
+    border-radius: 2px;
+}
+
+.md-table-pagination {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+md-table-container {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/*línea a la fila*/
+
+table td {
+    border-top: 1px solid;
+}
+
+
+/*hover a la fila*/
+
+table tbody > tr:not([disabled]):hover {
+    background-color: gray;
+
+}
+
+
+/*select del pagination*/
+
+md-select.md-table-select {
+    margin: 0;
+}
+
+md-select.md-table-select > .md-select-value {
+    padding: 0 0 0 24px;
+    min-width: initial;
+    min-height: 24px;
+    border-bottom: 0 !important;
+}
+
+md-select.md-table-select > .md-select-value > span {
+    height: auto;
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+md-select.md-table-select > .md-select-value > span.md-select-icon {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 24px;
+    margin: 5px;
+}
+
+md-select.md-table-select > .md-select-value > span.md-select-icon:after {
+    top: initial;
+}
+
+
+/* /select del pagination*/
+
+
+/* page foot*/
+
+tfoot ul {
+    margin: 0px;
+    padding: 0px;
+    float: right;
+}
+
+tfoot ul li {
+    display: inline;
+    float: left;
+    list-style: none;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+tfoot li a {
+    color: #fff;
+    text-decoration: none;
+    color: #212121;
+    padding: 5px;
+}
+
+tfoot li a:hover {
+    text-decoration: none;
+}
+
+
+/* end page foot*/
+
+
+/* footer pagination*/
+
+table tfoot td {
+    padding: 5px 24px 5px 5px;
+}
+
+
+
+
+/*
+* Para los td de las tablas, para los buttons
+*/
+
+.md-button.md-td {
+    min-height: 6px;
+    min-width: 8px;
+}
+
+.md-button.md-icon-button.md-td {
+    height: 34px;
+}
+
+
+/*
+* Fin para los td de las tablas
+*/
+
+md-progress-circular { /* overlay circle spinner */
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    margin: -15px 0 0 -15px;
+    width: 30px;
+    height: 30px;
+    border-right-color: transparent;
+    border-radius: 50%;
+    opacity: 10;
+}
+
+.app {
+    height: 100%;
+}
+
+@media (min-width: 992px) {
+
+    md-sidenav.folded { /* ocultar menu toogle left*/
+        width: 0px;
+    }
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+
+
+/* scrollable*/
+
+.scrollable {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scrollable.hover {
+    overflow-y: hidden !important;
+}
+
+.scrollable.hover > * {
+    margin-top: -1px;
+}
+
+.scrollable.hover:hover {
+    overflow: visible !important;
+    overflow-y: auto !important;
+}
+
+.smart .scrollable {
+    overflow-y: auto !important;
+}
+
+.scroll-x,
+.scroll-y {
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scroll-y {
+    overflow-y: auto;
+}
+
+.scroll-x {
+    overflow-x: auto;
+}
+
+
+/* / scrollable*/
+
+
+md-dialog.main {
+    max-width: 95%;
+    max-height: 95%;
+}
+
+
+/*
+ * Para el input buscar de la tabla del CRUD
+ */
+
+.md-search {
+    height: 10px;
+}
+
+
+/* Menu main*/
+
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    overflow-x: hidden;
+}
+/*
+.nav > li {
+    position: relative;
+    display: block;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: #eee;
+}
+*/
+.nav > li.disabled > a {
+    color: #777;
+}
+
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus {
+    color: #777;
+    text-decoration: none;
+    cursor: not-allowed;
+    /*background-color: transparent;*/
+}
+/*
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+    background-color: #eee;
+    border-color: #337ab7;
+}
+
+.nav .nav-divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+*/
+.nav > li > a > img {
+    max-width: none;
+}
+
+nav ul.nav li {
+    position: relative;
+}
+
+nav ul.nav li li a {
+    padding-left: 72px;
+    line-height: 36px;
+}
+
+nav ul.nav li li a .badge,
+nav ul.nav li li a .label {
+    margin-top: 10px;
+}
+
+nav ul.nav li li li a {
+    padding-left: 88px;
+}
+
+nav ul.nav li li li li a {
+    padding-left: 106px;
+}
+
+nav ul.nav li a,
+nav ul.nav li .nav-item {
+    position: relative;
+    display: block;
+    padding: 0 16px;
+    font-weight: normal;
+    line-height: 40px;
+    text-align: left;
+    text-transform: none;
+    border-radius: 0 !important;
+}
+
+nav ul.nav li a .text,
+nav ul.nav li .nav-item .text {
+    margin-left: 16px;
+}
+
+nav ul.nav li a .up,
+nav ul.nav li .nav-item .up {
+    z-index: 1;
+    margin-left: 16px;
+    font-style: normal;
+}
+
+nav ul.nav li a > .pull-right ng-md-icon,
+nav ul.nav li .nav-item > .pull-right ng-md-icon {
+    margin-left: 16px;
+    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul.nav li a > .icon,
+nav ul.nav li .nav-item > .icon {
+    top: 0;
+    float: left;
+    min-width: 40px;
+    margin-right: 16px;
+    line-height: inherit;
+}
+
+nav ul.nav li a > .icon:before,
+nav ul.nav li .nav-item > .icon:before {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+    opacity: 0.75;
+}
+
+nav ul.nav li a:hover,
+nav ul.nav li .nav-item:hover,
+nav ul.nav li a:focus,
+nav ul.nav li .nav-item:focus {
+    background-color: rgba(158, 158, 158, 0.2);
+}
+
+nav ul.nav li label {
+    display: block;
+}
+
+nav ul.nav li label i {
+    margin-right: 48px;
+    margin-left: -16px;
+}
+
+nav ul.nav li.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+nav ul.nav li.active > a {
+    background-color: transparent;
+}
+
+nav ul.nav li.active > a > .pull-right ng-md-icon {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+nav ul.nav.nav-stacked a,
+nav ul.nav.nav-stacked .nav-header {
+    padding: 0 16px;
+    line-height: 30px;
+}
+
+nav .nav-header {
+    padding: 0 16px;
+    line-height: 40px;
+}
+
+nav .nav-header:hover,
+nav .nav-header:focus {
+    background-color: transparent !important;
+}
+
+.nav-sub {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+    transition: max-height 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.nav-sub .md-ripple-container {
+    display: none;
+    visibility: hidden;
+}
+
+.active > .nav-sub {
+    max-height: 999px;
+}
+
+.active > .nav-sub .md-ripple-container {
+    display: block;
+    visibility: visible;
+}
+
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #777;
+    border-radius: 10px;
+}
+
+.badge:empty {
+    display: none;
+}
+
+
+/* / menu main*/
+
+
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    outline: 0;
+    color: green; /*para todo a, asi no este asociado a ningun estado*/
+}
+
+.inherit {
+    color: inherit; /* toggle-submenu no tenga el color green de a */
+}
+ 
+a:hover, 
+a:focus, 
+a:active {
+    text-decoration: none;
+   
+}
+
+a:link,
+a:visited {
+     color: inherit; /*para a con estado asociado*/
+}
+
+
+table.table-responsive {
+    border-spacing: 0;
+    overflow: hidden;
+}
+
+
+@media screen and (max-width: 600px) {
+    table.table-responsive caption {
+        background-image: none;
+    }
+    table.table-responsive thead {
+        display: none;
+    }
+    table.table-responsive tbody td {
+        display: block;
+        padding: .6rem;
+    }
+    table.table-responsive tbody tr td:first-child {
+        background: #666;
+        color: #fff;
+    }
+    table.table-responsive tbody td:before {
+        content: attr(data-title);
+        position: relative;
+        left: 2px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+}

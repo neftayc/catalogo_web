@@ -137,7 +137,7 @@ app
 // Modelo lite para datos del usuario
 //====================================================
     .service('userService', function() {
-    userName: null
+    return { userName: null };
 });
 
 app
@@ -254,6 +254,3 @@ app
     });
 
 });
-
-
-
