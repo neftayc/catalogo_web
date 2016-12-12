@@ -580,7 +580,7 @@ app.controller("MainCtrl", function($scope, $timeout, $mdSidenav, $log, $rootSco
     $scope.showGridBottomSheet = function() {
         $scope.alert = "";
         $mdBottomSheet.show({
-            templateUrl: "app/views/bottom-sheet-grid-template.html",
+            templateUrl: "dist/views/bottom-sheet-grid-template.html",
             controller: "GridBottomSheetCtrl",
             clickOutsideToClose: true
         }).then(function(clickedItem) {});
@@ -625,7 +625,7 @@ app.controller("BottomSheetExample", function($scope, $timeout, $mdBottomSheet, 
     $scope.showListBottomSheet = function() {
         $scope.alert = "";
         $mdBottomSheet.show({
-            templateUrl: "app/views/bottom-sheet-list-template.html",
+            templateUrl: "dist/views/bottom-sheet-list-template.html",
             controller: "ListBottomSheetCtrl"
         }).then(function(clickedItem) {});
     };
