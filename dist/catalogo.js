@@ -185,7 +185,7 @@ app.constant("ROUTERS", [ {
         url: "/catalogo",
         views: {
             "": {
-                templateUrl: "app/views/layouts/uno/layout.html"
+                templateUrl: "dist/views/layouts/uno/layout.html"
             }
         },
         loginRequired: false
@@ -197,7 +197,7 @@ app.constant("ROUTERS", [ {
         },
         views: {
             "": {
-                templateUrl: "app/views/layouts/401_unauthorized.html"
+                templateUrl: "dist/views/layouts/401_unauthorized.html"
             }
         }
     },
@@ -208,7 +208,7 @@ app.constant("ROUTERS", [ {
         },
         views: {
             "": {
-                templateUrl: "app/views/layouts/dashboard.wall.html"
+                templateUrl: "dist/views/layouts/dashboard.wall.html"
             }
         }
     },
@@ -223,7 +223,7 @@ app.constant("ROUTERS", [ {
             section: "Catálogo",
             page: "Categorías"
         },
-        templateUrl: "app/views/categorias/index.html",
+        templateUrl: "dist/views/categorias/index.html",
         loginRequired: true
     },
     "catalogo.catalogo.categoriasNew": {
@@ -232,7 +232,7 @@ app.constant("ROUTERS", [ {
             section: "Catálogo",
             page: "Categorías"
         },
-        templateUrl: "app/views/categorias/form.html"
+        templateUrl: "dist/views/categorias/form.html"
     },
     "catalogo.catalogo.categoriasEdit": {
         url: "/categorias/:id/edit",
@@ -240,7 +240,7 @@ app.constant("ROUTERS", [ {
             section: "Catálogo",
             page: "Categorías"
         },
-        templateUrl: "app/views/categorias/form.html"
+        templateUrl: "dist/views/categorias/form.html"
     }
 }, {
     "catalogo.catalogo.autores": {
@@ -249,7 +249,7 @@ app.constant("ROUTERS", [ {
             section: "Catálogo",
             page: "Autores"
         },
-        templateUrl: "app/views/autores/index.html"
+        templateUrl: "dist/views/autores/index.html"
     },
     "catalogo.catalogo.autoresNew": {
         url: "/autores/new",
@@ -257,7 +257,7 @@ app.constant("ROUTERS", [ {
             section: "Catálogo",
             page: "Autores"
         },
-        templateUrl: "app/views/autores/form.html"
+        templateUrl: "dist/views/autores/form.html"
     },
     "catalogo.catalogo.autoresEdit": {
         url: "/autores/:id/edit",
@@ -265,7 +265,7 @@ app.constant("ROUTERS", [ {
             section: "Catálogo",
             page: "Autores"
         },
-        templateUrl: "app/views/autores/form.html"
+        templateUrl: "dist/views/autores/form.html"
     }
 } ]);
 
