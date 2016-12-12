@@ -175,8 +175,13 @@ app
 //====================================================
 // oauth2Service runing
 //====================================================
-.run(function(oauth2Service, $state, $rootScope, $location, authUrl, $window, userService) {
+.run(function(oauth2Service, menuService, $state, $rootScope, $location, authUrl, $window, userService) {
 
+    menuService.menuUrl = "menu.json";
+    //menuService.apiMenuUrl = "http://localhost:7001/api/oauth2_backend/usermenu/";
+
+    $rootScope.menu = menuService.getMenu();
+    
 
     oauth2Service.loginUrl = authUrl + "/o/authorize/";
     oauth2Service.oidcUrl = authUrl + "/api/oauth2_backend/localuserinfo/";

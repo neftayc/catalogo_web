@@ -27,7 +27,6 @@ var app = angular.module("catalogo", [
 app.constant("authUrl", "http://localhost:7001"); // Authorization Server -> oauth2_backend_service
 app.constant("apiUrl", "http://localhost:8003"); // Resource Server -> catalogo
 
-app.constant("menuUrl", "http://localhost:7001/api/oauth2_backend/usermenu/"); // Api que trae el menu del usuario
 app.constant("homeUrl", "http://localhost:9001"); // Página de inicio o de convergencia
 
 

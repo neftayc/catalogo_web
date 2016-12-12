@@ -1,6 +1,6 @@
 app
     .controller('MainCtrl', function($scope, $timeout, $mdSidenav, $log, $rootScope, $filter, $mdDateLocale,
-        menuService, oauth2Service, authUrl, $window, $mdBottomSheet, $mdToast, $translate, $locale, tmhDynamicLocale) {
+        oauth2Service, authUrl, $window, $mdBottomSheet, $mdToast, $translate, $locale, tmhDynamicLocale) {
 
         //locale and translate
         console.log('moment.locale()=' + moment.locale());
@@ -173,12 +173,12 @@ app
 
         //
         $scope.app = {
-            name: 'Home App',
+            name: 'Catálogo App',
             version: '1.0.1',
         };
         // /
 
-        $scope.menu = menuService;
+        //$scope.menu = menuService;
 
         //
         $scope.logIn = function() {
