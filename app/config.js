@@ -173,16 +173,14 @@ app
 
 
 //====================================================
-// oauth2Service runing
+// oauth2Service and menuService runing
 //====================================================
 .run(function(oauth2Service, menuService, $state, $rootScope, $location, authUrl, $window, userService) {
 
     menuService.menuUrl = "menu.json";
     //menuService.apiMenuUrl = "http://localhost:7001/api/oauth2_backend/usermenu/";
-
     $rootScope.menu = menuService.getMenu();
     
-
     oauth2Service.loginUrl = authUrl + "/o/authorize/";
     oauth2Service.oidcUrl = authUrl + "/api/oauth2_backend/localuserinfo/";
     //oauth2Service.routersUrl = authUrl + "/api/oauth2_backend/routers/"; // no activar pk no se puede activar un sesion en la misma app

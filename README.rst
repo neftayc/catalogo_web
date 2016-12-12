@@ -82,7 +82,7 @@ Revise las configuraciones
 
 
 	var app = angular.module("catalogo", [
-	    "pi.menuuno",
+	    "pi.dynamicMenu",
 	    "pi.oauth2",
 	    "pi.appPagination",
 	    "pi.tableResponsive",
@@ -112,9 +112,6 @@ Revise las configuraciones
 	app.constant("apiUrl", "http://localhost:8003"); 
 
 3. Constantes opcionales de la app::
-	
-	// Api que trae el menu del usuario
-	app.constant("menuUrl", "http://localhost:7001/api/oauth2_backend/usermenu/"); 
 
 	// Página de inicio o de convergencia
 	app.constant("homeUrl", "http://localhost:9001"); 
@@ -124,7 +121,15 @@ Revise las configuraciones
 
 4. config.js file setting like this::
 
-	app.run(function(oauth2Service, $state, $rootScope, $location, authUrl, $window, userService) {
+	app
+		//====================================================
+		// oauth2Service and menuService runing
+		//====================================================
+	.run(function(oauth2Service, menuService, $state, $rootScope, $location, authUrl, $window, userService) {
+
+	    menuService.menuUrl = "menu.json";
+	    //menuService.apiMenuUrl = "http://localhost:7001/api/oauth2_backend/usermenu/";
+	    $rootScope.menu = menuService.getMenu();
 
 	    oauth2Service.loginUrl = authUrl + "/o/authorize/";
 	    oauth2Service.oidcUrl = authUrl + "/api/oauth2_backend/localuserinfo/";
