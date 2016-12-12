@@ -33,7 +33,8 @@
     "angular-i18n": "^1.5.9",
     "angular-oauth2-frontend": "https://github.com/practian-reapps/angular-oauth2-frontend.git",
     "angular-material-pagination": "https://github.com/practian-reapps/angular-material-pagination.git",
-    "angular-material-responsive-tables": "https://github.com/practian-reapps/angular-material-responsive-tables.git"
+    "angular-material-responsive-tables": "https://github.com/practian-reapps/angular-material-responsive-tables.git",
+    "angular-material-menu": "https://github.com/practian-reapps/angular-material-menu.git"
   },
   "devDependencies": {
     "angular-translate": "^2.13.0"

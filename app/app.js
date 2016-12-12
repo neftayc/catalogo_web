@@ -1,5 +1,5 @@
 var app = angular.module("catalogo", [
-    "pi.menuuno",
+    "pi.dynamicMenu",
     "pi.oauth2",
     "pi.appPagination",
     "pi.tableResponsive",
@@ -24,7 +24,6 @@ var app = angular.module("catalogo", [
 //====================================================
 // Constantes de la app
 //====================================================
-// app.constant("apiUrl", "http://localhost:42344");
 app.constant("authUrl", "http://localhost:7001"); // Authorization Server -> oauth2_backend_service
 app.constant("apiUrl", "http://localhost:8003"); // Resource Server -> catalogo
 

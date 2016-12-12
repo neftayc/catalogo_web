@@ -173,7 +173,7 @@ app
 
 
 //====================================================
-// 
+// oauth2Service runing
 //====================================================
 .run(function(oauth2Service, $state, $rootScope, $location, authUrl, $window, userService) {
 

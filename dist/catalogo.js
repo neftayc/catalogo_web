@@ -5,7 +5,7 @@
  * @link 
  * @license ISC
  */
-var app = angular.module("catalogo", [ "pi.menuuno", "pi.oauth2", "pi.appPagination", "pi.tableResponsive", "ui.router", "ngResource", "ngAnimate", "ngAria", "ngSanitize", "ngMaterial", "ngMdIcons", "toastr", "ngMessages", "pascalprecht.translate", "tmh.dynamicLocale" ]);
+var app = angular.module("catalogo", [ "pi.dynamicMenu", "pi.oauth2", "pi.appPagination", "pi.tableResponsive", "ui.router", "ngResource", "ngAnimate", "ngAria", "ngSanitize", "ngMaterial", "ngMdIcons", "toastr", "ngMessages", "pascalprecht.translate", "tmh.dynamicLocale" ]);
 
 app.constant("authUrl", "http://localhost:7001");
 
