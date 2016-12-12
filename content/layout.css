@@ -9,57 +9,6 @@
     }
 }
 
-.pull-right {
-    float: right !important;
-}
-
-.pull-left {
-    float: left !important;
-}
-
-
-
-/* scrollable*/
-
-.scrollable {
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.scrollable.hover {
-    overflow-y: hidden !important;
-}
-
-.scrollable.hover > * {
-    margin-top: -1px;
-}
-
-.scrollable.hover:hover {
-    overflow: visible !important;
-    overflow-y: auto !important;
-}
-
-.smart .scrollable {
-    overflow-y: auto !important;
-}
-
-.scroll-x,
-.scroll-y {
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-}
-
-.scroll-y {
-    overflow-y: auto;
-}
-
-.scroll-x {
-    overflow-x: auto;
-}
-
-
-/* / scrollable*/
 
 
 md-dialog.main {
