@@ -19,7 +19,7 @@ app.constant('ROUTERS', [
                     "templateUrl": "dist/views/layouts/uno/layout.html"
                 }
             },
-            "loginRequired": false
+            "loginRequired": true
         },
         "catalogo.401_unauthorized": {
             "url": "/401_unauthorized",

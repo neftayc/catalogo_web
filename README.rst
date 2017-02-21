@@ -71,6 +71,25 @@ Run the app in 9003 port::
 	[09:22:36] Finished 'serve' after 93 ms
 	[09:22:36] Server started http://localhost:9003
 
+(Recomendado)Run the app in 9003 port with serve-browser-sync::
+
+	E:\practian-ioteca-project\catalogo_web>gulp
+
+	(node:1712) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.
+	[05:10:24] Using gulpfile E:\practian-ioteca-project\catalogo_web\gulpfile.js
+	[05:10:24] Starting 'serve-browser-sync'...
+	[05:10:26] Finished 'serve-browser-sync' after 2.61 s
+	[05:10:26] Starting 'watch'...
+	[05:10:26] Finished 'watch' after 28 ms
+	[05:10:26] Starting 'default'...
+	[05:10:26] Finished 'default' after 26 μs
+	[BS] Access URLs:
+	 -------------------------------
+	    Local: http://localhost:9003
+	 External: http://127.0.0.1:9003
+	 -------------------------------
+	[BS] Serving files from: ./
+
 
 ===========
 Revise las configuraciones

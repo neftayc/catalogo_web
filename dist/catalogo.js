@@ -188,7 +188,7 @@ app.constant("ROUTERS", [ {
                 templateUrl: "dist/views/layouts/uno/layout.html"
             }
         },
-        loginRequired: false
+        loginRequired: true
     },
     "catalogo.401_unauthorized": {
         url: "/401_unauthorized",
@@ -705,34 +705,6 @@ app.controller("BottomSheetExample", function($scope, $timeout, $mdBottomSheet, 
     };
 });
 
-app.config(function($translateProvider) {
-    $translateProvider.translations("en-us", {
-        HEADLINE: "XSS possible!",
-        PARAGRAPH: "Hello {{username}}!",
-        TITLE: "Hello",
-        "hola foo": "This is a paragraph.",
-        "en-us": "English",
-        "es-pe": "Spanish Peruvian"
-    });
-});
-
-app.config(function($translateProvider) {
-    $translateProvider.translations("es-pe", {
-        HEADLINE: "XSS possible!",
-        PARAGRAPH: "Hola es-pe {{username}}!",
-        TITLE: "Hola",
-        "hola foo": "This is a paragraph.",
-        "en-us": "Inglés",
-        "es-pe": "Español Perú",
-        categoria: "Categoría",
-        categorias: "Categorías",
-        "trabajar con": "Trabajar con",
-        codigo: "Código",
-        nombre: "Nombre",
-        estado: "Estado"
-    });
-});
-
 app.factory("catalogoService", function($resource, apiUrl) {
     var url = apiUrl + "/api/catalogo/";
     return {
@@ -773,4 +745,32 @@ app.factory("catalogoService", function($resource, apiUrl) {
             }
         })
     };
+});
+
+app.config(function($translateProvider) {
+    $translateProvider.translations("en-us", {
+        HEADLINE: "XSS possible!",
+        PARAGRAPH: "Hello {{username}}!",
+        TITLE: "Hello",
+        "hola foo": "This is a paragraph.",
+        "en-us": "English",
+        "es-pe": "Spanish Peruvian"
+    });
+});
+
+app.config(function($translateProvider) {
+    $translateProvider.translations("es-pe", {
+        HEADLINE: "XSS possible!",
+        PARAGRAPH: "Hola es-pe {{username}}!",
+        TITLE: "Hola",
+        "hola foo": "This is a paragraph.",
+        "en-us": "Inglés",
+        "es-pe": "Español Perú",
+        categoria: "Categoría",
+        categorias: "Categorías",
+        "trabajar con": "Trabajar con",
+        codigo: "Código",
+        nombre: "Nombre",
+        estado: "Estado"
+    });
 });

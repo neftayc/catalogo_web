@@ -1,5 +1,6 @@
 app
 
+
     .factory("catalogoService", function($resource, apiUrl) {
     var url = apiUrl+"/api/catalogo/";
     return {
